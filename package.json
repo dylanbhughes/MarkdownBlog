@@ -1,0 +1,30 @@
+{
+  "name": "markdown-blog",
+  "version": "1.0.0",
+  "description": "A blog engine for developers who hate typing in the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanbhughes/MarkdownBlog.git"
+  },
+  "keywords": [
+    "blog",
+    "node",
+    "express",
+    "markdown",
+    "github"
+  ],
+  "author": "Dylan Hughes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylanbhughes/MarkdownBlog/issues"
+  },
+  "homepage": "https://github.com/dylanbhughes/MarkdownBlog#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  }
+}
