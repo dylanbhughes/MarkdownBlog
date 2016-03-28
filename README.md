@@ -24,7 +24,7 @@ Markdown blog. Using Github's parsing algorithm as inspiration, this blog engine
 ## "This is the most efficient way to blog on my own domain. I love it." -Leeroy Jenkins*
 
 ## Conclusion
-What are you waiting for? Just go fork me: _link_
+What are you waiting for? Just go fork me: https://github.com/dylanbhughes/MarkdownBlog
 
 
 *(not actual quote)
