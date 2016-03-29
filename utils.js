@@ -51,6 +51,7 @@ function writePosts() {
     if(err) {
       console.error("Error reading posts directory: ", err);
     }
+    data.reverse();
     let counter = 0;
     let max = data.length -1;
     function readAFile(){
