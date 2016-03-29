@@ -84,5 +84,20 @@ function writePosts() {
 };
 
 function writeFooter() {
-  
+  fs.readFile(footer, (err, data) => {
+    if(err) {
+      console.error("Error reading footer", err);
+    }
+    console.log('Footer: ', data + "");
+    fs.write(fileDescriptor, data + "", (err) => {
+      if(err) {
+        console.error("Error writing footer", err);
+      }
+      fs.close(fileDescriptor, (err) => {
+        if(err) {
+          console.error("error closing index.", err);
+        }
+      });
+    });
+  });
 }
