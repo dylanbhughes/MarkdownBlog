@@ -4,7 +4,7 @@ var fs = require('fs');
 var MarkdownIt = require('markdown-it');
 var md = new MarkdownIt();
 var test = md.render('#This is a test.')
-
+// TODO: Make these ENV Variables
 var posts = __dirname + '/posts/';
 var footer = __dirname + '/templates/footer.html';
 var header = __dirname + '/templates/header.html';
@@ -14,7 +14,9 @@ var fileDescriptor;
 module.exports.writeIndex = function() {
   var indexFileDescriptor;
   fs.writeFile(index, '', (err) => {
-    if(err) console.log(err);
+    if(err) {
+      console.log(err);
+    }
     writeHead(writePosts);
   });
 }
@@ -30,7 +32,7 @@ function writeHead(callback) {
       if(err) {
         console.error('error reading header: ', err);
       }
-      console.log('headerfile data', data + "");
+      console.log('headerfile data');
       fs.write(fileDescriptor, data + "", (err, written, string) => {
         fs.close(fileDescriptor, (err) => {
           if(err) {
@@ -57,7 +59,8 @@ function writePosts() {
           console.error('Error reading markdown file: ', err);
         }
         var convertedData = md.render(data + "");
-        console.log(convertedData);
+        convertedData = wrapInPostDiv(convertedData);
+        console.log("Post data converted");
         fs.open(index, 'a', (err, fd) => {
           fs.write(fd, convertedData, (err, written, string) => {
             if (err) {
@@ -88,7 +91,7 @@ function writeFooter() {
     if(err) {
       console.error("Error reading footer", err);
     }
-    console.log('Footer: ', data + "");
+    //console.log('Footer: ', data + "");
     fs.write(fileDescriptor, data + "", (err) => {
       if(err) {
         console.error("Error writing footer", err);
@@ -100,4 +103,9 @@ function writeFooter() {
       });
     });
   });
+}
+
+function wrapInPostDiv(htmlString) {
+  // wraps converted markdown in a div with the class of post
+  return '<div class="post">\n' + htmlString + '\n</div>\n';
 }

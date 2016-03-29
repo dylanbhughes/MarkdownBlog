@@ -1,0 +1,46 @@
+@media (min-width: 768px) {
+
+  .main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+
+  body {
+    font-family: helvetica, sans-serif;
+  }
+
+}
+
+body {
+  background-color: #CEEAF9;
+}
+
+a {
+  text-decoration-style: none;
+}
+
+div {
+  border-radius: 25px;
+}
+
+.main {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.post {
+  padding-top: 10px;
+  padding: 5px;
+  background-color: white;
+}
+
+.footer {
+  padding-top: 15px;
+}
+
+.headerDiv p {
+  font-style: italic;
+}

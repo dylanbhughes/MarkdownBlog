@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 var utils = require('./utils.js');
 
 app.set('port', (process.env.PORT || 8000));
-// TODO: Set 'posts' dir as an ENV var
 
 utils.writeIndex();
 
