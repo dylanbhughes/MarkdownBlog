@@ -6,25 +6,44 @@
     width: 60%;
   }
 
-  body {
-    font-family: helvetica, sans-serif;
+  .bannerDiv {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+
+}
+
+@media (max-width: 384px) {
+
+  a.linkedin {
+    visibility: hidden;
   }
 
 }
 
 body {
-  background-color: #CEEAF9;
+  font-family: helvetica, sans-serif;
 }
 
 a {
-  text-decoration-style: none;
+  text-decoration: none;
 }
 
 div {
-  border-radius: 25px;
+
+}
+
+.bannerDiv {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 10px;
 }
 
 .main {
+  color: black;
   margin-left: auto;
   margin-right: auto;
   padding-left: 25px;
@@ -32,8 +51,7 @@ div {
 }
 
 .post {
-  padding-top: 10px;
-  padding: 5px;
+  padding: 15px;
   background-color: white;
 }
 
@@ -43,4 +61,24 @@ div {
 
 .headerDiv p {
   font-style: italic;
+}
+
+.headerDiv {
+  color: white;
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #000000 , #434343); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.headerDiv a {
+  color: white;
+}
+
+.nav {
+  padding: 10px;
+}
+
+.nav a {
+  padding: 5px;
+  font-size: 14px;
 }
