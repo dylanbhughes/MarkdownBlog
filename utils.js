@@ -3,7 +3,6 @@
 var fs = require('fs');
 var MarkdownIt = require('markdown-it');
 var md = new MarkdownIt();
-var test = md.render('#This is a test.')
 // TODO: Make these ENV Variables
 var posts = __dirname + '/posts/';
 var footer = __dirname + '/templates/footer.html';
