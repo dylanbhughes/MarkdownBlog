@@ -50,16 +50,18 @@ function writePosts() {
     if(err) {
       console.error("Error reading posts directory: ", err);
     }
+    writePostAnchors(data);
     data.reverse();
     let counter = 0;
     let max = data.length -1;
     function readAFile(){
+      var postName = data[counter];
       fs.readFile(posts + data[counter], (err, data) => {
         if(err) {
           console.error('Error reading markdown file: ', err);
         }
         var convertedData = md.render(data + "");
-        convertedData = wrapInPostDiv(convertedData);
+        convertedData = wrapInPostDiv(convertedData, postName);
         console.log("Post data converted");
         fs.open(index, 'a', (err, fd) => {
           fs.write(fd, convertedData, (err, written, string) => {
@@ -105,7 +107,16 @@ function writeFooter() {
   });
 }
 
-function wrapInPostDiv(htmlString) {
+function wrapInPostDiv(htmlString, postName) {
   // wraps converted markdown in a div with the class of post
-  return '<div class="post">\n' + htmlString + '\n</div>\n';
+  return '<div class="post">\n'
+    + '<a name="post'
+    + postName.substring(0,1)
+    + '" ></a>\n'
+    + htmlString
+    + '\n</div>\n';
+}
+
+function writePostAnchors(postNumbers) {
+  //console.log(postNumbers);
 }
