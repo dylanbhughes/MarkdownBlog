@@ -9,6 +9,7 @@ var footer = __dirname + '/templates/footer.html';
 var header = __dirname + '/templates/header.html';
 var index = __dirname + '/public/index.html';
 var fileDescriptor;
+var postNames;
 
 module.exports.writeIndex = function() {
   var indexFileDescriptor;
@@ -50,7 +51,6 @@ function writePosts() {
     if(err) {
       console.error("Error reading posts directory: ", err);
     }
-    writePostAnchors(data);
     data.reverse();
     let counter = 0;
     let max = data.length -1;
@@ -117,6 +117,6 @@ function wrapInPostDiv(htmlString, postName) {
     + '\n</div>\n';
 }
 
-function writePostAnchors(postNumbers) {
+function writePostAnchors(postNumbers, callback) {
   //console.log(postNumbers);
 }
